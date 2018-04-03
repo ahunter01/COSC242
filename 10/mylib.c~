@@ -1,0 +1,17 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include "mylib.h"
+
+void *emalloc(size_t s){
+    if (NULL == s){
+        fprintf(stderr, "Memory allocation failed!\n");
+        exit(EXIT_FAILURE);
+    }
+}
+
+void *erealloc(void *p, size_t s){
+    if (NULL == p){
+        fprintf(stderr, "Memory allocation failed!\n");
+        exit (EXIT_FAILURE);
+    }
+}

@@ -1,0 +1,25 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+int main (int argc, char **argv){
+    int i;
+    clock_t start, end;
+
+    
+    start = clock();
+    for (i = 0; i < atoi(argv[1]); i++){
+        fprint("%d\n", rand());
+        i--;
+    }
+    end = clock();
+
+    fprintf(stderr, "%d %f\n", atoi(argv[1]), (end-start)/
+            (double)CLOCKS_PER_SEC);
+    
+    return EXIT_SUCCESS;
+}
+
+
+    
+        

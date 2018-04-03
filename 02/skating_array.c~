@@ -1,0 +1,57 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+
+#define ARRAY_SIZE 10
+
+int main (void){
+
+    int j1[ARRAY_SIZE], j2[ARRAY_SIZE], j3[ARRAY_SIZE], lines = 0, i;
+    double s1, s2, s3, mean, sd, totalm, totalsd;
+
+    while (4 == scanf("%d%lg%lg%lg", &num, &s1, &s2, &s3)){
+        j1[lines] = s1;
+        j2[lines] = s2;
+        j3[lines] = s3;
+        lines++;
+    }
+
+    printf("\t\tAverage\tSD\n");
+
+    for (i = 0; i < j1.length; i++){
+        totalm += j1[i];
+    }
+    mean = totalm/j1.length;
+    for (i = 0; i < j1.length; i++){
+        totalsd += sqrt(j1[i]-mean);
+    }
+    sd = totalsd/(j1.length-1);
+
+    printf("judge 1 : %f\t %f\n", mean, sd);
+
+    totalm = 0, totalsd = 0;
+    
+    for (i = 0; i < j2.length; i++){
+        totalm += j2[i];
+    }
+    mean = totalm/j2.length;
+    for (i = 0; i < j2.length; i++){
+        totalsd += sqrt(j2[i]-mean);
+    }
+    sd = totalsd/(j2.length-1);
+
+    printf("judge 2 : %f\t %f\n", mean, sd);
+    
+    totalm = 0, totalsd = 0;
+    
+    for (i = 0; i < j3.length; i++){
+        totalm += j3[i];
+    }
+    mean = totalm/j3.length;
+    for (i = 0; i < j3.length; i++){
+        totalsd += sqrt(j3[i]-mean);
+    }
+    sd = totalsd/(j3.length-1);
+
+    printf("judge 3 : %f\t %f\n", mean, sd);
+}

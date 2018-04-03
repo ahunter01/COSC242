@@ -1,0 +1,57 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include "mylib.h"
+#include "queue.h"
+
+typedef struct q_item *q_item;
+
+struct q_item{
+    double item;
+    q_item next;
+};
+
+struct queue{
+    q_item first;
+    q_item last;
+    int length;
+};
+
+queue queue_new(){
+    /* need to allocate memory */
+    queue result = emalloc(sizeof *result);
+    /* result->item = -1; */
+    q->first = q->last; /* ? */
+    q->length = 0;
+}
+
+void enqueue(queue q, double item){
+    q->last->next = item;
+    q->last = q->last->next
+    q->length++;
+}
+
+void dequeue(queue q){
+    q_item dequeue;
+    dequeue = q->first;
+    q->first = q->first->next;
+    q->length--;
+    return dequeue;
+}
+
+void queue_print(queue q){
+    /* is this even a right idea? */
+    double to_print = q->first;
+    while(q->first != q->last && to_print != NULL){
+        printf("%f\n", to_print);
+        to_print = q->next;
+    }
+}
+
+int queue_size(queue q){
+    return q->length;
+}
+
+queue queue_free(queue q){
+    /* something */
+}

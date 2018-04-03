@@ -1,0 +1,19 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include "mylib.h"
+#include "queue.h"
+
+typedef struct q_item *q_item;
+
+struct q_item{
+    double item;
+    q_item next;
+};
+
+struct queue{
+    q_item first;
+    q_item last;
+    int length;
+};
+
